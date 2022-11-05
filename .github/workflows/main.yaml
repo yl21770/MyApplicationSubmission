@@ -1,6 +1,6 @@
 name: My Workflow
 #final test 2.0
-#trigger``
+#trigger
 on:
   push:
     branches:
