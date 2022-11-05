@@ -1,3 +1,5 @@
+[![My Workflow](https://github.com/yl21770/MyApplicationSubmission/actions/workflows/main.yaml/badge.svg)](https://github.com/yl21770/MyApplicationSubmission/actions/workflows/main.yaml)
+
 ## Command line options
 
 | Option    | Description                        | Default       |
