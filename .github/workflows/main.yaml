@@ -1,6 +1,6 @@
 name: My Workflow
 #final test 2.0
-#trigger
+#trigger`
 on:
   push:
     branches:
@@ -40,64 +40,64 @@ jobs:
         tag_name: ${{ github.ref_name }}
         release_name: ${{ github.ref_name }}
     
-    # - name: Slack notification
-    #   id: slack
-    #   uses: slackapi/slack-github-action@v1.23.0
-    #   env:
-    #     SLACK_WEBHOOK_URL: ${{ secrets.TEST_HOOK }}
-    #     SLACK_WEBHOOK_TYPE: INCOMING_WEBHOOK
-    #   with:
-    #     payload: |
-    #       {
-    #         "blocks": [
-    #           {
-    #             "type": "header",
-    #             "text": {
-    #               "type": "plain_text",
-    #               "text": "DipSA55 CI/CD Assignment Submission"
-    #             }
-    #           },
-    #           {
-    #             "type": "section",
-    #             "fields": [
-    #               {
-    #                 "type": "mrkdwn",
-    #                 "text": "*Name:*\nLu Bo Zhen"
-    #               },
-    #               {
-    #                 "type": "mrkdwn",
-    #                 "text": "*Matriculation:*\nA0265077X"
-    #               }
-    #             ]
-    #           },
-    #           {
-    #             "type": "section",
-    #             "fields": [
-    #               {
-    #                 "type": "mrkdwn",
-    #                 "text": "*Email:*\n<mailto:e1045752@u.nus.edu|e1045752@u.nus.edu>"
-    #               },
-    #               {
-    #                 "type": "mrkdwn",
-    #                 "text": "*Repository:*\n<${{ github.repositoryUrl }}>"
-    #               }
-    #             ]
-    #           },
-    #           {
-    #             "type": "section",
-    #             "fields": [
-    #               {
-    #                 "type": "mrkdwn",
-    #                 "text": "*Deployment:*\n<${{ fromJson(steps.linkgen.outputs.url).deployUrl }}>"
-    #               }
-    #             ]
-    #           },
-    #           {
-    #             "type": "section",
-    #             "text": {
-    #               "type": "mrkdwn",
-    #               "text": "<${{ fromJson(steps.linkgen.outputs.url).deployUrl }}|Open Application>"
-    #             }
-    #           }
-    #         ]
-    #       }
+    - name: Slack notification
+      id: slack
+      uses: slackapi/slack-github-action@v1.23.0
+      env:
+        SLACK_WEBHOOK_URL: ${{ secrets.TEST_HOOK }}
+        SLACK_WEBHOOK_TYPE: INCOMING_WEBHOOK
+      with:
+        payload: |
+          {
+            "blocks": [
+              {
+                "type": "header",
+                "text": {
+                  "type": "plain_text",
+                  "text": "DipSA55 CI/CD Assignment Submission"
+                }
+              },
+              {
+                "type": "section",
+                "fields": [
+                  {
+                    "type": "mrkdwn",
+                    "text": "*Name:*\nLu Bo Zhen"
+                  },
+                  {
+                    "type": "mrkdwn",
+                    "text": "*Matriculation:*\nA0265077X"
+                  }
+                ]
+              },
+              {
+                "type": "section",
+                "fields": [
+                  {
+                    "type": "mrkdwn",
+                    "text": "*Email:*\n<mailto:e1045752@u.nus.edu|e1045752@u.nus.edu>"
+                  },
+                  {
+                    "type": "mrkdwn",
+                    "text": "*Repository:*\n<${{ github.repositoryUrl }}>"
+                  }
+                ]
+              },
+              {
+                "type": "section",
+                "fields": [
+                  {
+                    "type": "mrkdwn",
+                    "text": "*Deployment:*\n<${{ fromJson(steps.linkgen.outputs.url).deployUrl }}>"
+                  }
+                ]
+              },
+              {
+                "type": "section",
+                "text": {
+                  "type": "mrkdwn",
+                  "text": "<${{ fromJson(steps.linkgen.outputs.url).deployUrl }}|Open Application>"
+                }
+              }
+            ]
+          }
